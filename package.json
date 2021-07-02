@@ -1,0 +1,30 @@
+{
+  "name": "inbox",
+  "version": "0.0.1",
+  "description": "A small inbox dApp\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[imple inbox dApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadmininstrator/inbox.git"
+  },
+  "keywords": [
+    "Ethereum"
+  ],
+  "author": "Marco Serrano",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^8.3.2",
+    "solc": "^0.4.17",
+    "truffle-hdwallet-provider": "^0.0.3",
+    "web3": "^1.3.5"
+  },
+  "bugs": {
+    "url": "https://github.com/sadmininstrator/inbox/issues"
+  },
+  "homepage": "https://github.com/sadmininstrator/inbox#readme"
+}
