@@ -22,10 +22,10 @@ contract Lottery {
         return uint(sha3(block.difficulty, now, players));
     }
     
-    function refund() public restricted { // todo
+    //function refund() public restricted { // todo
         // convert the players array into a string => uint mapping
         // loop through mapping and transer the corresponding amount of eth
-    }
+    //}
     
     function getPlayers() public view returns(address[]) {
         return players;
