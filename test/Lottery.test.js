@@ -62,7 +62,7 @@ describe('Lottery Contract', () => {
         try {
             await lottery.methods.enter().send({
                 from: accounts[0],
-                value: web3.utils.toWei('.001', 'ether')
+                value: web3.utils.toWei('.0001', 'ether')
             });
 
             assert(false);

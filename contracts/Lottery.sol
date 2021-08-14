@@ -1,38 +1,34 @@
-pragma solidity ^0.4.17;
+// SPDX-License-Identifier: ISC
+pragma solidity ^0.8;
 
 contract Lottery {
     address public manager;
     address[] public players;
-
-    function Lottery() public {
+    
+    constructor() {
         manager = msg.sender;
     }
     
     function enter() public payable {
-        require(msg.value >= .01 ether);
+        require(msg.value >= .0001 ether);
         players.push(msg.sender);
     }
     
     function pickWinner() public restricted {
-        players[random() % players.length].transfer(this.balance);
+        payable(players[random() % players.length]).transfer(address(this).balance);
         players = new address[](0);
     }
     
     function random() private view returns (uint) {
-        return uint(sha3(block.difficulty, now, players));
+        return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
     }
     
-    //function refund() public restricted { // todo
-        // convert the players array into a string => uint mapping
-        // loop through mapping and transer the corresponding amount of eth
-    //}
-    
-    function getPlayers() public view returns(address[]) {
+    function getPlayers() public view returns(address[] memory) {
         return players;
     }
 
     function getBalance() public view returns(uint) {
-        return this.balance;
+        return address(this).balance;
     }
     
     modifier restricted() {
